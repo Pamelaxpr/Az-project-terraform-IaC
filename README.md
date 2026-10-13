@@ -14,7 +14,7 @@ El código levanta los siguientes recursos en la región `Spain Central`:
 * **Máquina Virtual Linux** (Ubuntu 22.04 LTS) optimizada para capa gratuita/estudiantes (`Standard_B1s`).
 
 ## Estructura del Directorio
-
+```text
 El proyecto separa la capa de infraestructura física de la capa lógica de software:
 terraform-azure/
 ├── Variables/
