@@ -1,0 +1,16 @@
+# Archivos de estado de Terraform (contienen información sensible)
+*.tfstate
+*.tfstate.backup
+
+# Directorio oculto de Terraform (descarga de proveedores)
+.terraform/
+
+# Archivos de variables con secretos
+*.tfvars
+
+# Archivos de plan
+*.tfplan
+
+# Dependencias
+.terraform/
+.terraform.lock.hcl
