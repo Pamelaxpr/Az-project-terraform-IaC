@@ -1,21 +1,20 @@
-# Infraestructura Web Automatizada en Azure (Terraform + Ansible)
+# Automated Web Infrastructure on Azure (Terraform + Ansible)
 
-Este proyecto aprovisiona una arquitectura de red base y un servidor en Microsoft Azure mediante **Terraform** (Infraestructura como Código), y posteriormente lo configura de manera automática como servidor web utilizando **Ansible** (Gestión de Configuración).
+This project provisions a base network architecture and a server in Microsoft Azure using Terraform (Infrastructure as Code), and subsequently configures it automatically as a web server using Ansible (Configuration Management).
 
-## Arquitectura Desplegada
+## Deployed Architecture 
 
-El código levanta los siguientes recursos en la región `Spain Central`:
-* **Grupo de Recursos** dedicado para el proyecto.
-* **Red Virtual (VNet)** segmentada en dos subredes:
-  * `snet-app`: Orientada a la aplicación pública.
-  * `snet-db`: Subred aislada para futuras implementaciones de bases de datos.
-* **Grupo de Seguridad de Red (NSG)** con reglas estrictas vinculadas a la interfaz de red (apertura de puertos 22, 80 y 443).
-* **IP Pública Estática** y una **Interfaz de Red (NIC)**.
-* **Máquina Virtual Linux** (Ubuntu 22.04 LTS) optimizada para capa gratuita/estudiantes (`Standard_B1s`).
-
-## Estructura del Directorio
+The code deploys the following resources in the 'Spain Central' region:
+* **Dedicated Resource Group** for the project.
+* **Virtual Network (VNet)** segmented into two subnets:
+  * `snet-app`: Oriented towards the public application.
+  * `snet-db`: Isolated subnet for future database implementations.
+* **Network Security Group (NSG)** with strict rules attached to the network interface (allowing inbound traffic on ports 22, 80, and 443).
+* **Static Public IP** and a **Network Interface (NIC)**.
+* **Linux Virtual Machine** (Ubuntu 22.04 LTS) optimized
+## Directory Structure
 ```text
-El proyecto separa la capa de infraestructura física de la capa lógica de software:
+The project separates the physical infrastructure layer from the logical software layer:
 terraform-azure/
 ├── Variables/
 │   ├── 01-configuracion-server.yml  # Playbook de Ansible que instala Nginx
