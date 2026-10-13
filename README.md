@@ -15,4 +15,13 @@ El código levanta los siguientes recursos en la región `Spain Central`:
 
 ## Estructura del Directorio
 
-El proyecto separa la capa de infraestructura física de la capa lógica de software
+El proyecto separa la capa de infraestructura física de la capa lógica de software:
+terraform-azure/
+├── Variables/
+│   ├── 01-configuracion-server.yml  # Playbook de Ansible que instala Nginx
+│   └── index.html                   # Archivo estático inyectado en el servidor
+├── main.tf                          # Declaración de recursos y disparador de Ansible
+├── outputs.tf                       # Salidas dinámicas (IP Pública y comando SSH)
+├── providers.tf                     # Configuración del proveedor AzureRM
+├── .gitignore                       # Protección de archivos de estado y secretos
+└── README.md                        # Documentación del proyecto
